@@ -13,7 +13,7 @@ import { Bookmark } from "lucide-react";
 import PlantsFilterSort from "./ui/plants-filter-bar";
 import axios from "axios";
 import type { Plant, FilterType } from "@/shared/types/plant";
-import { mockPlants } from "@/shared/mock/plants-guide";
+
 
 export default function PlantsGuidePage() {
   const [plants, setPlants] = useState<Plant[]>([]);
@@ -22,7 +22,7 @@ export default function PlantsGuidePage() {
   const [filter, setFilter] = useState<FilterType>("All");
   const [sort, setSort] = useState<"asc" | "desc">("asc");
 
-  const API_KEY = "sk-b74J6985fcc83e4c314707";
+  const API_KEY = import.meta.env.VITE_PERENUAL_API_KEY;
 
   useEffect(() => {
     axios
@@ -36,13 +36,13 @@ export default function PlantsGuidePage() {
       if (filter === "All") return true;
 
       const familyMatch = p.family_common_name === filter;
-      const lightMatch = p.specifications.light?.includes(filter);
+      const lightMatch = p.specifications?.light?.includes(filter);
 
       return familyMatch || lightMatch;
     })
     .sort((a, b) => {
-      const nameA = a.common_name || a.scientific_name || "";
-      const nameB = b.common_name || b.scientific_name || "";
+      const nameA = (a.common_name || (Array.isArray(a.scientific_name) ? a.scientific_name[0] : a.scientific_name) || "");
+      const nameB = (b.common_name || (Array.isArray(b.scientific_name) ? b.scientific_name[0] : b.scientific_name) || "");
       return sort === "asc"
         ? nameA.localeCompare(nameB)
         : nameB.localeCompare(nameA);
@@ -98,9 +98,8 @@ export default function PlantsGuidePage() {
                   {plant.common_name}
                 </h3>
                 <p className="text-sm text-muted-foreground italic truncate">
-                  {plant.scientific_name}
-                </p>
-                <div className="pt-2 text-sm">
+                  {Array.isArray(plant.scientific_name) ? plant.scientific_name.join(", ") : plant.scientific_name}
+                </p>                <div className="pt-2 text-sm">
                   <span className="font-medium">Type:</span>{" "}
                   {plant.family_common_name || "N/A"}
                 </div>
@@ -137,9 +136,8 @@ export default function PlantsGuidePage() {
               <DialogTitle>
                 {selectedPlant.common_name}{" "}
                 <span className="text-muted-foreground font-normal text-sm ml-2">
-                  ({selectedPlant.scientific_name})
-                </span>
-              </DialogTitle>
+                  ({Array.isArray(selectedPlant.scientific_name) ? selectedPlant.scientific_name.join(", ") : selectedPlant.scientific_name})
+                </span>              </DialogTitle>
             </DialogHeader>
             <div className="space-y-4">
               {selectedPlant.default_image?.medium_url && (

@@ -22,7 +22,7 @@ export default function AddPlantPage() {
   const [plants, setPlants] = useState<Plant[]>([]);
   const [search, setSearch] = useState("");
 
-  const API_KEY = "sk-b74J6985fcc83e4c314707";
+  const API_KEY = import.meta.env.VITE_PERENUAL_API_KEY;
 
   useEffect(() => {
     axios
@@ -91,7 +91,7 @@ export default function AddPlantPage() {
 
                     {items
                       .sort((a, b) =>
-                        a.common_name.localeCompare(b.common_name),
+                        (a.common_name || "").localeCompare(b.common_name || ""),
                       )
                       .map((plant) => (
                         <SelectItem key={plant.id} value={String(plant.id)}>

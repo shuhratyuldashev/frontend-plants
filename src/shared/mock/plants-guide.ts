@@ -2,9 +2,9 @@ import type { Plant } from "@/shared/types/plant";
 
 export const mockPlants: Plant[] = [
   {
-    id: 1,
+    id: "1",
     common_name: "Aloe Vera",
-    scientific_name: "Aloe barbadensis",
+    scientific_name: ["Aloe barbadensis"],
     family_common_name: "Succulent",
     default_image: {
       medium_url:
@@ -18,11 +18,12 @@ export const mockPlants: Plant[] = [
       description:
         "Aloe Vera is a succulent plant species known for its medicinal properties and easy care.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 2,
+    id: "2",
     common_name: "Golden Pothos",
-    scientific_name: "Epipremnum aureum",
+    scientific_name: ["Epipremnum aureum"],
     family_common_name: "Araceae",
     default_image: {
       medium_url:
@@ -36,11 +37,12 @@ export const mockPlants: Plant[] = [
       description:
         "Golden Pothos is a hardy indoor vine that tolerates low light and irregular watering.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 3,
+    id: "3",
     common_name: "Snake Plant",
-    scientific_name: "Sansevieria trifasciata",
+    scientific_name: ["Sansevieria trifasciata"],
     family_common_name: "Asparagaceae",
     default_image: {
       medium_url:
@@ -54,11 +56,12 @@ export const mockPlants: Plant[] = [
       description:
         "Snake Plant is a tough indoor plant known for air-purifying qualities and low maintenance.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 4,
+    id: "4",
     common_name: "Peace Lily",
-    scientific_name: "Spathiphyllum wallisii",
+    scientific_name: ["Spathiphyllum wallisii"],
     family_common_name: "Araceae",
     default_image: {
       medium_url:
@@ -72,11 +75,12 @@ export const mockPlants: Plant[] = [
       description:
         "Peace Lily produces elegant white flowers and thrives in moderate indoor conditions.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 5,
+    id: "5",
     common_name: "Spider Plant",
-    scientific_name: "Chlorophytum comosum",
+    scientific_name: ["Chlorophytum comosum"],
     family_common_name: "Asparagaceae",
     default_image: {
       medium_url:
@@ -90,11 +94,12 @@ export const mockPlants: Plant[] = [
       description:
         "Spider Plant is a popular hanging plant, easy to propagate and tolerant of low care.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 6,
+    id: "6",
     common_name: "Fiddle Leaf Fig",
-    scientific_name: "Ficus lyrata",
+    scientific_name: ["Ficus lyrata"],
     family_common_name: "Moraceae",
     default_image: {
       medium_url:
@@ -108,11 +113,12 @@ export const mockPlants: Plant[] = [
       description:
         "Fiddle Leaf Fig is a trendy indoor plant with large leaves, needs bright filtered light.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 7,
+    id: "7",
     common_name: "Rubber Plant",
-    scientific_name: "Ficus elastica",
+    scientific_name: ["Ficus elastica"],
     family_common_name: "Moraceae",
     default_image: {
       medium_url:
@@ -126,11 +132,12 @@ export const mockPlants: Plant[] = [
       description:
         "Rubber Plant is a robust indoor tree with glossy leaves, prefers indirect sunlight.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 8,
+    id: "8",
     common_name: "ZZ Plant",
-    scientific_name: "Zamioculcas zamiifolia",
+    scientific_name: ["Zamioculcas zamiifolia"],
     family_common_name: "Araceae",
     default_image: {
       medium_url:
@@ -144,11 +151,12 @@ export const mockPlants: Plant[] = [
       description:
         "ZZ Plant is extremely low maintenance and can survive in dim indoor conditions.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 9,
+    id: "9",
     common_name: "Boston Fern",
-    scientific_name: "Nephrolepis exaltata",
+    scientific_name: ["Nephrolepis exaltata"],
     family_common_name: "Nephrolepidaceae",
     default_image: {
       medium_url:
@@ -162,11 +170,12 @@ export const mockPlants: Plant[] = [
       description:
         "Boston Fern is a classic lush plant, prefers high humidity and indirect light.",
     },
+    cycle: "Perennial",
   },
   {
-    id: 10,
+    id: "10",
     common_name: "Jade Plant",
-    scientific_name: "Crassula ovata",
+    scientific_name: ["Crassula ovata"],
     family_common_name: "Crassulaceae",
     default_image: {
       medium_url:
@@ -180,5 +189,7 @@ export const mockPlants: Plant[] = [
       description:
         "Jade Plant is a succulent with thick leaves, very drought-tolerant and easy to care for.",
     },
+    cycle: "Perennial",
   },
 ];
+

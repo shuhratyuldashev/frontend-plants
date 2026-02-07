@@ -1,10 +1,10 @@
 // pages/plants/list/ui/plants-page.tsx
 
-import { Skeleton } from "@/shared/ui/skeleton";
-import { Alert, AlertTitle, AlertDescription } from "@/shared/ui/alert";
-import { AlertCircle, Leaf } from "lucide-react";
+
+
+
 import { PlantCard } from "@/entities/plant/ui/plant-card";
-import { usePlants } from "@/entities/plant/model";
+
 import { MOCK_PLANTS } from "@/shared/mock/plants";
 import { AddPlantButton } from "@/widgets/add-plant-button/ui";
 
