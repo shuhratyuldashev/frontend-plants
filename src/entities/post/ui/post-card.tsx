@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/shared/ui/card";
 import { Button } from "@/shared/ui/button";
 import { Heart, MessageCircle, Share2 } from "lucide-react";
 import type { Post } from "@/shared/types/post";
+import { Link } from "react-router-dom";
 
 interface PostCardProps {
   post: Post;
@@ -25,7 +26,7 @@ export function PostCard({ post }: PostCardProps) {
           <span>•</span>
           <span>{post.createdAt.toLocaleDateString()}</span>
         </div>
-        <h2 className="text-xl font-bold leading-none">{post.title}</h2>
+        <Link to={`/post/${post.id}`} className="text-xl font-bold leading-none hover:underline">{post.title}</Link>
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground leading-relaxed">{post.body}</p>

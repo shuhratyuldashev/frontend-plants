@@ -12,3 +12,13 @@ export interface CreatePostDTO {
   body: string;
   imageUrl?: string;
 }
+
+
+
+export interface Comment {
+  id: string;
+  postId: string;
+  author: string;
+  body: string;
+  createdAt: Date;
+}

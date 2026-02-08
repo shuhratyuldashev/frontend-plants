@@ -1,4 +1,4 @@
-import type { Post } from "@/shared/types/post";
+import type { Post, Comment } from "@/shared/types/post";
 
 export const MOCK_POSTS: Post[] = [
   {
@@ -45,5 +45,32 @@ export const MOCK_POSTS: Post[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=1200",
     createdAt: new Date("2024-12-01"),
+  },
+];
+
+
+
+
+export const MOCK_COMMENTS: Comment[] = [
+  {
+    id: "c-1",
+    postId: "post-1",
+    author: "leaf_master",
+    body: "Great advice! Overwatering killed my first monstera 😅",
+    createdAt: new Date("2024-11-12"),
+  },
+  {
+    id: "c-2",
+    postId: "post-1",
+    author: "plant_noob",
+    body: "How do you check soil properly?",
+    createdAt: new Date("2024-11-13"),
+  },
+  {
+    id: "c-3",
+    postId: "post-2",
+    author: "urban_grower",
+    body: "Snake plant is truly unkillable.",
+    createdAt: new Date("2024-11-16"),
   },
 ];

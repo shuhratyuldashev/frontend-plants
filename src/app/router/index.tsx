@@ -9,6 +9,7 @@ import { MyPlantsPage } from "@/pages/my-plants";
 import ProfilePage from "@/pages/profile";
 import { Route, Routes } from "react-router-dom";
 import MyPlantPage from "@/pages/my-plant";
+import PostPage from "@/pages/post";
 
 function AppRoutes() {
   return (
@@ -17,7 +18,7 @@ function AppRoutes() {
         <Route path="/" element={<HomePage />} />
         <Route path="plants" element={<MyPlantsPage />} />
         <Route path="plants/:id" element={<MyPlantPage />} />
-
+        <Route path="post/:id" element={<PostPage />} />
         <Route path="plants-guide" element={<PlantsGuidePage />} />
         <Route path="assistant" element={<AiAssistantPage />} />
         <Route path="profile" element={<ProfilePage />} />
