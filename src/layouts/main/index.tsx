@@ -5,7 +5,7 @@ export default function MainLayout() {
   return (
     <div className="container mx-auto h-screen flex">
       <Sidebar />
-      <main className="flex-1">
+      <main className="flex-1 px-4">
         <Outlet />
       </main>
     </div>

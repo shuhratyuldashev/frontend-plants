@@ -32,4 +32,3 @@ export interface Plant {
     dueAt: string;
   };
 }
-

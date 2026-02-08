@@ -14,7 +14,6 @@ import PlantsFilterSort from "./ui/plants-filter-bar";
 import axios from "axios";
 import type { Plant, FilterType } from "@/shared/types/plant";
 
-
 export default function PlantsGuidePage() {
   const [plants, setPlants] = useState<Plant[]>([]);
   const [selectedPlant, setSelectedPlant] = useState<Plant | null>(null);
@@ -41,8 +40,18 @@ export default function PlantsGuidePage() {
       return familyMatch || lightMatch;
     })
     .sort((a, b) => {
-      const nameA = (a.common_name || (Array.isArray(a.scientific_name) ? a.scientific_name[0] : a.scientific_name) || "");
-      const nameB = (b.common_name || (Array.isArray(b.scientific_name) ? b.scientific_name[0] : b.scientific_name) || "");
+      const nameA =
+        a.common_name ||
+        (Array.isArray(a.scientific_name)
+          ? a.scientific_name[0]
+          : a.scientific_name) ||
+        "";
+      const nameB =
+        b.common_name ||
+        (Array.isArray(b.scientific_name)
+          ? b.scientific_name[0]
+          : b.scientific_name) ||
+        "";
       return sort === "asc"
         ? nameA.localeCompare(nameB)
         : nameB.localeCompare(nameA);
@@ -98,8 +107,11 @@ export default function PlantsGuidePage() {
                   {plant.common_name}
                 </h3>
                 <p className="text-sm text-muted-foreground italic truncate">
-                  {Array.isArray(plant.scientific_name) ? plant.scientific_name.join(", ") : plant.scientific_name}
-                </p>                <div className="pt-2 text-sm">
+                  {Array.isArray(plant.scientific_name)
+                    ? plant.scientific_name.join(", ")
+                    : plant.scientific_name}
+                </p>{" "}
+                <div className="pt-2 text-sm">
                   <span className="font-medium">Type:</span>{" "}
                   {plant.family_common_name || "N/A"}
                 </div>
@@ -136,8 +148,13 @@ export default function PlantsGuidePage() {
               <DialogTitle>
                 {selectedPlant.common_name}{" "}
                 <span className="text-muted-foreground font-normal text-sm ml-2">
-                  ({Array.isArray(selectedPlant.scientific_name) ? selectedPlant.scientific_name.join(", ") : selectedPlant.scientific_name})
-                </span>              </DialogTitle>
+                  (
+                  {Array.isArray(selectedPlant.scientific_name)
+                    ? selectedPlant.scientific_name.join(", ")
+                    : selectedPlant.scientific_name}
+                  )
+                </span>{" "}
+              </DialogTitle>
             </DialogHeader>
             <div className="space-y-4">
               {selectedPlant.default_image?.medium_url && (

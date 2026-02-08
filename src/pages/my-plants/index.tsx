@@ -1,8 +1,5 @@
 // pages/plants/list/ui/plants-page.tsx
 
-
-
-
 import { PlantCard } from "@/entities/plant/ui/plant-card";
 
 import { MOCK_PLANTS } from "@/shared/mock/plants";
@@ -45,7 +42,7 @@ export const MyPlantsPage = () => {
         </div>
       )} */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {MOCK_PLANTS?.map((plant) => (
           <PlantCard key={plant.id} plant={plant} />
         ))}

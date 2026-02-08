@@ -3,34 +3,38 @@ import type { Plant } from "@/shared/types/plant";
 export const MOCK_PLANTS: Plant[] = [
   {
     id: "1",
-    name: "Monstera Deliciosa",
+    name: "Flora",
+    common_name: "Monstera Deliciosa",
     location: "home",
     nextAction: {
       type: "water",
-      dueAt: new Date(Date.now() - 86400000).toISOString(), // Вчера (Attention)
+      dueAt: new Date(Date.now() - 86400000).toISOString(),
     },
   },
   {
     id: "2",
-    name: "Golden Pothos",
+    name: "Lili",
+    common_name: "Golden Pothos",
     location: "balcony",
     nextAction: {
       type: "feed",
-      dueAt: new Date(Date.now() + 172800000).toISOString(), // Через 2 дня (OK)
+      dueAt: new Date(Date.now() + 172800000).toISOString(),
     },
   },
   {
     id: "3",
-    name: "Snake Plant",
+    name: "John Doe",
+    common_name: "Snake Plant",
     location: "outside",
     nextAction: {
       type: "repot",
-      dueAt: new Date(Date.now() + 604800000).toISOString(), // Через неделю (OK)
+      dueAt: new Date(Date.now() + 604800000).toISOString(),
     },
   },
   {
     id: "4",
-    name: "Fiddle Leaf Fig",
+    name: "John Doe",
+    common_name: "Fiddle Leaf Fig",
     location: "home",
     // Без действия (OK)
   },

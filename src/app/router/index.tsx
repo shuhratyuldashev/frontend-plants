@@ -8,6 +8,7 @@ import PlantsGuidePage from "@/pages/plants-guide";
 import { MyPlantsPage } from "@/pages/my-plants";
 import ProfilePage from "@/pages/profile";
 import { Route, Routes } from "react-router-dom";
+import MyPlantPage from "@/pages/my-plant";
 
 function AppRoutes() {
   return (
@@ -15,6 +16,8 @@ function AppRoutes() {
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="plants" element={<MyPlantsPage />} />
+        <Route path="plants/:id" element={<MyPlantPage />} />
+
         <Route path="plants-guide" element={<PlantsGuidePage />} />
         <Route path="assistant" element={<AiAssistantPage />} />
         <Route path="profile" element={<ProfilePage />} />

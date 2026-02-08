@@ -91,7 +91,9 @@ export default function AddPlantPage() {
 
                     {items
                       .sort((a, b) =>
-                        (a.common_name || "").localeCompare(b.common_name || ""),
+                        (a.common_name || "").localeCompare(
+                          b.common_name || "",
+                        ),
                       )
                       .map((plant) => (
                         <SelectItem key={plant.id} value={String(plant.id)}>
